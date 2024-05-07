@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace AlexManase\ErrorNotifications\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class ErrorNotificationsCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'error-notifications';
 
     public $description = 'My command';
 
