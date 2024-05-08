@@ -15,10 +15,7 @@ class SendTelegramNotifications extends Notification
     public function toTelegram($notifiable)
     {
         return TelegramMessage::create()
-            // Optional recipient user id.
-            // ->to($notifiable->telegram_user_id)
-            // Markdown supported.
-            ->content("Hello there!")
+            ->content("New error!")
         ;
     }
 }

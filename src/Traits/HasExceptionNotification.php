@@ -6,7 +6,7 @@ use AlexManase\ErrorNotifications\Notifications\SendTelegramNotifications;
 use Illuminate\Support\Facades\Notification;
 use Throwable;
 
-class HasExceptionNotification
+trait HasExceptionNotification
 {
     /**
      * A list of the exception types that should not be reported.

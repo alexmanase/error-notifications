@@ -1,11 +1,11 @@
 <?php
 
+use AlexManase\ErrorNotifications\Facades\ErrorNotifications;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
 
 use function Orchestra\Testbench\default_skeleton_path;
-use function Orchestra\Testbench\workbench_path;
 
 return Application::configure(basePath: default_skeleton_path())
     ->withRouting(
@@ -16,5 +16,5 @@ return Application::configure(basePath: default_skeleton_path())
         //
     })
     ->withExceptions(function (Exceptions $exceptions) {
-        //
+        ErrorNotifications::report($exceptions);
     })->create();
