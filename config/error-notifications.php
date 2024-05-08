@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'enabled' => env('ERROR_NOTIFICATIONS', true),
+    'enabled' => env('ERROR_NOTIFICATIONS', true)
 ];

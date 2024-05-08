@@ -4,7 +4,7 @@ namespace AlexManase\ErrorNotifications;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use AlexManase\ErrorNotifications\Commands\ErrorNotificationsCommand;
+use AlexManase\ErrorNotifications\Commands\ErrorNotificationsTest;
 
 class ErrorNotificationsServiceProvider extends PackageServiceProvider
 {
@@ -17,9 +17,10 @@ class ErrorNotificationsServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('error-notifications')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_error-notifications_table')
-            ->hasCommand(ErrorNotificationsCommand::class);
+            ->hasConfigFile('error-notifications')
+            // ->hasViews()
+            // ->hasMigration('create_error-notifications_table')
+            ->hasCommand(ErrorNotificationsTest::class)
+        ;
     }
 }

@@ -12,13 +12,6 @@ You can install the package via composer:
 composer require alexmanase/error-notifications
 ```
 
-You can publish and run the migrations with:
-
-```bash
-php artisan vendor:publish --tag="error-notifications-migrations"
-php artisan migrate
-```
-
 You can publish the config file with:
 
 ```bash
@@ -29,20 +22,20 @@ This is the contents of the published config file:
 
 ```php
 return [
+    'enabled' => env('ERROR_NOTIFICATIONS', true)
 ];
-```
-
-Optionally, you can publish the views using
-
-```bash
-php artisan vendor:publish --tag="error-notifications-views"
 ```
 
 ## Usage
 
+Invoke the `::report` method within the `withException` method located in the `app.php`
+file of your project.
+
 ```php
-$errorNotifications = new AlexManase\ErrorNotifications();
-echo $errorNotifications->echoPhrase('Hello, AlexManase!');
+// app.php
+->withExceptions(function (Exceptions $exceptions) {
+    ErrorNotifications::report($exceptions);
+})->create();
 ```
 
 ## Testing
@@ -66,7 +59,6 @@ Please review [our security policy](../../security/policy) on how to report secu
 ## Credits
 
 - [Alex Manase](https://github.com/alexmanase)
-- [All Contributors](../../contributors)
 
 ## License
 
