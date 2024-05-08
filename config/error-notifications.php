@@ -1,6 +1,5 @@
 <?php
 
-// config for AlexManase/ErrorNotifications
 return [
-
+    'enabled' => env('ERROR_NOTIFICATIONS', true),
 ];

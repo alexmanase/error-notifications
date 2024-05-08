@@ -1,0 +1,32 @@
+providers:
+  - Workbench\App\Providers\WorkbenchServiceProvider
+
+migrations:
+  - workbench/database/migrations
+
+seeders:
+  - Workbench\Database\Seeders\DatabaseSeeder
+
+resources:
+  - workbench/resources
+
+# laravel: ./workbench
+
+# env:
+  # - APP_DEBUG=(true)
+  # - APP_KEY="AckfSECXIvnK5r28GVIWUAxmbBSjTsmF"
+
+workbench:
+  start: '/'
+  install: true
+  health: false
+  welcome: false
+  discovers:
+    web: true
+    api: false
+    commands: false
+    components: false
+    views: true
+  build: []
+  assets: []
+  sync: []
